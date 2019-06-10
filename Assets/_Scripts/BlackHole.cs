@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Fim : MonoBehaviour
+public class BlackHole : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("End"))
+        if (other.CompareTag("BlackHoles"))
         {
-            SceneManager.LoadScene("WinMenu");
+            GetComponent<SphereCollider>().isTrigger = true;
         }
     }
 }
