@@ -4262,7 +4262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 629310206}
-  gameManager: {fileID: 1286397381}
 --- !u!1001 &635562534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7687,7 +7686,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b3c58c7a29f9546f28affc7b6ec66eb6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.03
+  m_Volume: 0.486
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14716,7 +14715,7 @@ PrefabInstance:
     - target: {fileID: 4858600803339671470, guid: 12668dcb79aad438bb149192fc9abd16,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4858600803339671470, guid: 12668dcb79aad438bb149192fc9abd16,
         type: 3}

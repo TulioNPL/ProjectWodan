@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
 
         if (morreu)
         {
-            GetComponent<AudioSource>().Stop();
             SceneManager.LoadScene("LoseMenu");
         }
     }
