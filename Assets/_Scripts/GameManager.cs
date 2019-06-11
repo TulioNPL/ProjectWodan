@@ -16,22 +16,17 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         coolDownTimer = coolDown;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
-        if (coolDownTimer > 0) coolDownTimer -= Time.deltaTime;
-        else coolDownTimer = 0;
+        bool morreu = jogadorMorreu();
+        spawner();
 
-        if (coolDownTimer == 0)
+        if (morreu)
         {
-            createBlackHole();
-            coolDownTimer = coolDown;
-        }
-
-        if (jogadorMorreu())
-        {
-            Debug.Log("Jogador Morreu");
+            GetComponent<AudioSource>().Stop();
             SceneManager.LoadScene("LoseMenu");
         }
     }
@@ -47,5 +42,17 @@ public class GameManager : MonoBehaviour
     {
         Vector3 position = new Vector3(Random.Range(-6.5f, 6.5f), 0, 6.0f);
         Instantiate(blackHole, position, Quaternion.identity);
+    }
+
+    private void spawner()
+    {
+        if (coolDownTimer > 0) coolDownTimer -= Time.deltaTime;
+        else coolDownTimer = 0;
+
+        if (coolDownTimer == 0)
+        {
+            createBlackHole();
+            coolDownTimer = coolDown;
+        }
     }
 }
